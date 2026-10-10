@@ -296,6 +296,17 @@ main { overflow-x: clip; }
 .basvuru-gonder:active { transform: scale(.98); }
 .basvuru-gonder:disabled { opacity: .6; cursor: wait; }
 .basvuru-tamam { text-align: center; padding: 56px 28px; align-self: center; }
+.isletme-sayfa { padding-top: 40px; }
+.isletme-sayfa h1 { font-size: clamp(34px, 4.6vw, 56px); line-height: 1.06; font-weight: 800; }
+.basvuru-cta {
+  position: relative; z-index: 1; background: #fff; color: var(--yazi); border-radius: 22px;
+  padding: 32px; box-shadow: 0 24px 60px rgba(120, 20, 0, .25); align-self: center;
+}
+.basvuru-cta h3 { font-size: 22px; font-weight: 800; }
+.basvuru-cta .basvuru-adim { margin-top: 20px; }
+.basvuru-cta .basvuru-adim b { background: var(--turuncu); color: #fff; }
+.basvuru-cta .basvuru-gonder { display: block; text-align: center; margin-top: 24px; text-decoration: none; }
+.basvuru-cta p { margin-top: 14px; font-size: 14px; color: var(--yazi-soluk); text-align: center; }
 .basvuru-tamam p { margin-top: 8px; color: var(--yazi-soluk); }
 .tamam-ikon { width: 64px; height: 64px; border-radius: 50%; background: var(--turuncu); color: #fff; display: inline-grid; place-items: center; font-size: 32px; font-weight: 800; margin-bottom: 16px; animation: tamam .5s cubic-bezier(.3,1.6,.5,1); }
 @keyframes tamam { from { transform: scale(0); } }

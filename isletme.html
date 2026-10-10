@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>İşletme başvurusu — Agros Kapında</title>
+  <meta name="description" content="İşletmeni Agros Kapında'ya taşı: restoran, kafe, market, manav, kuruyemişçi, çiçekçi… Formu doldur, ekibimiz seni arasın.">
+  <meta name="theme-color" content="#FF431A">
+  <link rel="canonical" href="https://agroskapinda.app/isletme">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Agros Kapında">
+  <meta property="og:title" content="İşletmeni Agros Kapında'ya taşı">
+  <meta property="og:description" content="Yeni müşterilere ulaş, teslimatı kuryelerimize bırak. Menünü biz hazırlıyoruz.">
+  <meta property="og:url" content="https://agroskapinda.app/isletme">
+  <meta property="og:image" content="https://agroskapinda.app/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="ust" id="ust">
+  <div class="kap ust-ic">
+    <a href="/" class="ust-logo" aria-label="Agros Kapında ana sayfa">
+      <img src="/img/logo-turuncu.png" alt="Agros Kapında" width="104" height="48">
+    </a>
+    <nav class="ust-menu" aria-label="Ana menü">
+      <a href="/#hizmetler">Hizmetler</a>
+      <a href="/#nasil">Nasıl çalışır</a>
+      <a href="/isletme" aria-current="page">İşletmeler için</a>
+      <a href="/destek">Destek</a>
+    </nav>
+    <a href="/#indir" class="dugme dugme-turuncu ust-dugme">Uygulamayı indir</a>
+  </div>
+</header>
+
+<main>
+  <section class="isletmeler isletme-sayfa" id="isletmeler">
+    <div class="kap isletme-kart">
+      <div class="isletme-metin">
+        <p class="ust-yazi acik">İşletmeler için</p>
+        <h1>İşletmeni Agros Kapında'ya taşı.</h1>
+        <p>Restoran, market, manav, kuruyemişçi ya da çiçekçi… Yeni müşterilere ulaş, teslimatı kuryelerimize bırak.</p>
+        <ul class="isletme-turleri" aria-label="İşletme türleri">
+          <li>Restoran</li><li>Market</li><li>Manav</li><li>Kuruyemişçi</li><li>Çiçekçi</li><li>Kafe</li><li>Pastane</li><li>Şarküteri</li>
+        </ul>
+        <ol class="basvuru-adim">
+          <li><b>1</b> Formu doldur</li>
+          <li><b>2</b> Ekibimiz seni arasın</li>
+          <li><b>3</b> Menünü biz hazırlayalım, sen satışa başla</li>
+        </ol>
+      </div>
+
+      <form class="basvuru" id="basvuru" novalidate>
+        <h3>Başvuru formu</h3>
+        <div class="alanlar">
+          <label class="genis">İşletme adı<input name="restaurant_name" required maxlength="120" autocomplete="organization"></label>
+          <label>İşletme türü
+            <select name="business_type" required>
+              <option value="">Seç</option>
+              <option>Restoran</option><option>Kafe</option><option>Pastane</option><option>Market</option>
+              <option>Manav</option><option>Kuruyemiş</option><option>Çiçekçi</option><option>Şarküteri</option><option>Diğer</option>
+            </select>
+          </label>
+          <label>Telefon<input name="phone" type="tel" required maxlength="20" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xxxx"></label>
+          <label class="genis">Yetkili adı soyadı<input name="contact_name" required maxlength="120" autocomplete="name"></label>
+          <label>İl<input name="province" required maxlength="60" autocomplete="address-level1"></label>
+          <label>İlçe<input name="district" required maxlength="60" autocomplete="address-level2"></label>
+          <label class="genis">Adres<input name="address" required maxlength="500" autocomplete="street-address"></label>
+          <label class="genis"><span>Not <small>(isteğe bağlı)</small></span><textarea name="note" rows="2" maxlength="1000" placeholder="Ör. aranmak için uygun saat"></textarea></label>
+          <label class="genis guvenlik"><span>Güvenlik sorusu: <b data-soru>…</b></span><input name="captcha_answer" required inputmode="numeric" maxlength="3" autocomplete="off"></label>
+          <label class="tuzak" aria-hidden="true">Web sitesi<input name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <label class="onay"><input type="checkbox" name="onay" required> <span>Başvurumla ilgili benimle iletişime geçilmesini kabul ediyorum. <a href="https://agrosjet.app/m/privacy" target="_blank" rel="noopener">Gizlilik politikası</a></span></label>
+        <p class="basvuru-mesaj" role="alert" hidden></p>
+        <button type="submit" class="basvuru-gonder">Başvuruyu gönder</button>
+      </form>
+      <div class="basvuru-tamam" id="basvuru-tamam" hidden>
+        <span class="tamam-ikon" aria-hidden="true">✓</span>
+        <h3>Başvurun alındı!</h3>
+        <p>Ekibimiz en kısa sürede seni arayacak.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="alt">
+  <div class="kap alt-ic">
+    <img src="/img/logo-beyaz.png" alt="Agros Kapında" width="100" height="46" loading="lazy">
+    <nav class="alt-menu" aria-label="Alt menü">
+      <a href="/destek">Destek</a>
+      <a href="https://agrosjet.app/m/privacy" rel="noopener">Gizlilik</a>
+      <a href="https://agrosjet.app/m/terms" rel="noopener">Kullanım koşulları</a>
+      <a href="https://agrosjet.app/m/hesap-sil" rel="noopener">Hesap silme</a>
+    </nav>
+    <p class="alt-not">Agros Kapında bir <a href="https://agrosjet.net" rel="noopener">AgrosJet</a> hizmetidir. · © <span data-yil>2026</span></p>
+  </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
