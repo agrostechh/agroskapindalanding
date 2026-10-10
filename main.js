@@ -25,32 +25,22 @@ document.querySelectorAll("[data-magazalar]").forEach((kap) => {
   kap.append(magazaDugmesi("ios"), magazaDugmesi("android"));
 });
 
-// Fiş tarihi ve yıl
-const bugun = new Date();
-document.querySelectorAll("[data-bugun]").forEach((t) => {
-  t.textContent = bugun.toLocaleDateString("tr-TR");
-});
-document.querySelectorAll("[data-yil]").forEach((s) => { s.textContent = bugun.getFullYear(); });
+document.querySelectorAll("[data-yil]").forEach((s) => { s.textContent = new Date().getFullYear(); });
 
-// Üst bar: kaydırınca zemin al
+// Üst bar: kaydırınca alt çizgi
 const ust = document.getElementById("ust");
-const ustGuncelle = () => ust.classList.toggle("kaydi", window.scrollY > 40);
+const ustGuncelle = () => ust.classList.toggle("kaydi", window.scrollY > 8);
 window.addEventListener("scroll", ustGuncelle, { passive: true });
 ustGuncelle();
 
 // Görünür olunca beliren bölümler
-const belirenler = document.querySelectorAll(".nasil-metin, .takip-metin, .neden-liste li, .restoran-metin, .basvuru-kart, .indir h2");
-belirenler.forEach((el) => el.classList.add("belir"));
-const fis = document.querySelector(".fis");
+const belirenler = document.querySelectorAll(".bolum-bas, .grup-baslik, .hizmet, .adimlar li, .neden-sol, .neden-liste li, .isletme-kart, .indir-ic");
 if ("IntersectionObserver" in window) {
+  belirenler.forEach((el) => el.classList.add("belir"));
   const gozcu = new IntersectionObserver((girdiler) => {
     girdiler.forEach((g) => {
       if (g.isIntersecting) { g.target.classList.add("gorundu"); gozcu.unobserve(g.target); }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
   belirenler.forEach((el) => gozcu.observe(el));
-  if (fis) gozcu.observe(fis);
-} else {
-  belirenler.forEach((el) => el.classList.add("gorundu"));
-  if (fis) fis.classList.add("gorundu");
 }
