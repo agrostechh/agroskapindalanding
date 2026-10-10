@@ -1,7 +1,7 @@
 // Mağaza bağlantıları: uygulama yayına girince adresi buraya yaz; boşken düğme "Yakında" görünür.
 const MAGAZA = {
   ios: "",      // örn. https://apps.apple.com/tr/app/agros-kapinda/id0000000000
-  android: "",  // örn. https://play.google.com/store/apps/details?id=app.agrosjet.yemek
+  android: "https://play.google.com/store/apps/details?id=app.agrosjet.yemek",
 };
 
 const IKON = {
