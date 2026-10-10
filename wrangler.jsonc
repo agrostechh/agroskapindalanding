@@ -1,0 +1,9 @@
+// Cloudflare Workers (statik site): depo kökü olduğu gibi yayınlanır; derleme yok.
+{
+  "name": "agroskapindalanding",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page"
+  }
+}
