@@ -438,7 +438,5 @@ main { overflow-x: clip; }
 }
 .komisyon span:last-child { font-size: 15px; line-height: 1.4; color: var(--yazi-soluk); }
 .komisyon b { color: var(--yazi); font-weight: 800; }
-.basvuru-alt { margin-top: 6px; font-size: 14px; color: var(--yazi-soluk); }
-.basvuru-alt b { color: var(--turuncu); font-weight: 800; }
 .basvuru-sag { position: relative; z-index: 1; display: grid; gap: 16px; align-content: start; align-self: center; }
 .komisyon-ust { margin-top: 0; max-width: none; }
