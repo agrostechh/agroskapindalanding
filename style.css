@@ -300,7 +300,7 @@ main { overflow-x: clip; }
 .isletme-sayfa h1 { font-size: clamp(34px, 4.6vw, 56px); line-height: 1.06; font-weight: 800; }
 .basvuru-cta {
   position: relative; z-index: 1; background: #fff; color: var(--yazi); border-radius: 22px;
-  padding: 32px; box-shadow: 0 24px 60px rgba(120, 20, 0, .25); align-self: center;
+  padding: 32px; box-shadow: 0 24px 60px rgba(120, 20, 0, .25);
 }
 .basvuru-cta h3 { font-size: 22px; font-weight: 800; }
 .basvuru-cta .basvuru-adim { margin-top: 20px; }
@@ -440,3 +440,5 @@ main { overflow-x: clip; }
 .komisyon b { color: var(--yazi); font-weight: 800; }
 .basvuru-alt { margin-top: 6px; font-size: 14px; color: var(--yazi-soluk); }
 .basvuru-alt b { color: var(--turuncu); font-weight: 800; }
+.basvuru-sag { position: relative; z-index: 1; display: grid; gap: 16px; align-content: start; align-self: center; }
+.komisyon-ust { margin-top: 0; max-width: none; }
