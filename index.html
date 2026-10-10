@@ -48,8 +48,12 @@
   <section class="giris">
     <div class="kap giris-ic">
       <div class="giris-metin">
-        <p class="rozet">Yemek · Market · Çiçek · Kurye · İlan</p>
-        <h1>Ne lazımsa,<br><span class="vurgu">kapında.</span></h1>
+        <p class="rozet"><span class="canli"></span> 8 hizmet, tek uygulama</p>
+        <h1>
+          <span class="satir"><span class="donen-kelime" data-donen="Yemek,Market,Çiçek,Kuruyemiş,Kurye,İş,Ev">Yemek</span></span>
+          <span class="satir">mi lazım?</span>
+          <span class="satir vurgu">Kapında.</span>
+        </h1>
         <p class="giris-alt">
           Restorandan yemek, marketten alışveriş, çiçekçiden buket, kuryeyle gönderi;
           iş, emlak ve ikinci el ilanları. Mahallendeki her şey tek uygulamada.
@@ -57,12 +61,50 @@
         <div class="magazalar" data-magazalar></div>
       </div>
 
-      <div class="giris-kolaj" aria-hidden="true">
-        <div class="kolaj-kart kk-yemek"><span>Yemek</span><img src="/img/hizmet/yemek.webp" alt="" width="640" height="486"></div>
-        <div class="kolaj-kart kk-mahalle"><span>Market &amp; Manav</span><img src="/img/hizmet/mahalle.webp" alt="" width="640" height="486"></div>
-        <div class="kolaj-kart kk-cicek"><span>Çiçek</span><img src="/img/hizmet/cicek.webp" alt="" width="640" height="486"></div>
-        <div class="kolaj-kart kk-jet"><span>Kurye</span><img src="/img/hizmet/jet.webp" alt="" width="640" height="486"></div>
+      <div class="sahne" aria-hidden="true">
+        <div class="damga">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="cember" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+            <text><textPath href="#cember" textLength="462" lengthAdjust="spacing">TEK UYGULAMA · 8 HİZMET · TEK UYGULAMA · 8 HİZMET ·</textPath></text>
+          </svg>
+          <img src="/img/icon-192.png" alt="" width="64" height="64">
+        </div>
+
+        <div class="yuzen yz-cicek"><img src="/img/hizmet/cicek.webp" alt="" width="640" height="486"><span>Çiçek</span></div>
+        <div class="yuzen yz-emlak"><img src="/img/hizmet/emlak.webp" alt="" width="640" height="486"><span>Emlak</span></div>
+
+        <div class="telefon">
+          <div class="ekran">
+            <div class="e-ust">
+              <img src="/img/logo-turuncu.png" alt="" width="70" height="32">
+              <span class="e-adres">Ev ▾</span>
+            </div>
+            <div class="e-afis"><b>Ne lazımsa, kapında.</b><small>Mahallendeki her şey burada</small></div>
+            <div class="e-izgara">
+              <div class="e-kart" style="--r:#FF431A"><b>Yemek</b><img src="/img/hizmet/yemek.webp" alt=""></div>
+              <div class="e-kart" style="--r:#16A34A"><b>Mahalle</b><img src="/img/hizmet/mahalle.webp" alt=""></div>
+              <div class="e-kart" style="--r:#DB2777"><b>Çiçek</b><img src="/img/hizmet/cicek.webp" alt=""></div>
+              <div class="e-kart" style="--r:#FF431A"><b>Jet</b><img src="/img/hizmet/jet.webp" alt=""></div>
+              <div class="e-kart" style="--r:#0EA5E9"><b>İş</b><img src="/img/hizmet/is.webp" alt=""></div>
+              <div class="e-kart" style="--r:#2563EB"><b>Al-Sat</b><img src="/img/hizmet/alsat.webp" alt=""></div>
+            </div>
+            <div class="e-alt"><span class="aktif"></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <div class="balon">
+          <span class="balon-ikon"><svg viewBox="0 0 24 24"><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0m10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0M3 17h2m4 0h6m4 0h1v-4l-3-5h-4v9M3 13h11V6H3z"/></svg></span>
+          <span><b>Kuryen yola çıktı</b><small>Birazdan kapındayız</small></span>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ───────── KAYAN ŞERİT ───────── -->
+  <section class="serit" aria-label="Hizmetler">
+    <div class="serit-hat">
+      <div class="serit-ic"><span>Yemek</span><i>✦</i><span>Market</span><i>✦</i><span>Manav</span><i>✦</i><span>Kuruyemiş</span><i>✦</i><span>Çiçek</span><i>✦</i><span>Kurye</span><i>✦</i><span>İş ilanı</span><i>✦</i><span>Emlak</span><i>✦</i><span>İkinci el</span><i>✦</i></div>
+      <div class="serit-ic" aria-hidden="true"><span>Yemek</span><i>✦</i><span>Market</span><i>✦</i><span>Manav</span><i>✦</i><span>Kuruyemiş</span><i>✦</i><span>Çiçek</span><i>✦</i><span>Kurye</span><i>✦</i><span>İş ilanı</span><i>✦</i><span>Emlak</span><i>✦</i><span>İkinci el</span><i>✦</i></div>
     </div>
   </section>
 
@@ -113,6 +155,58 @@
           <div class="hizmet-yazi"><h4>AgrosTaksi <em>Yakında</em></h4><p>Şehir içi güvenli ve konforlu taksi yolculuğu.</p></div>
           <img src="/img/hizmet/taksi.webp" alt="Taksi" loading="lazy" width="640" height="486">
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── TAKİP ───────── -->
+  <section class="takip">
+    <div class="kap takip-ic">
+      <div class="takip-metin">
+        <p class="ust-yazi">Her adımda haberin olsun</p>
+        <h2>Siparişin nerede,<br><span class="vurgu">hep bil.</span></h2>
+        <p>Restoran ya da dükkân siparişini onayladığında, kuryen yola çıktığında ve kapına geldiğinde telefonuna anında bildirim gelir.</p>
+      </div>
+      <div class="bildirimler" aria-hidden="true">
+        <div class="bd bd1"><img src="/img/icon-192.png" alt="" width="40" height="40"><span><b>Siparişin onaylandı</b><small>Taş Fırın hazırlamaya başladı.</small></span><em>şimdi</em></div>
+        <div class="bd bd2"><img src="/img/icon-192.png" alt="" width="40" height="40"><span><b>Kuryen yola çıktı</b><small>Siparişin sana doğru geliyor.</small></span><em>şimdi</em></div>
+        <div class="bd bd3"><img src="/img/icon-192.png" alt="" width="40" height="40"><span><b>Kapındayız!</b><small>Afiyet olsun.</small></span><em>şimdi</em></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── İLAN / MESAJ ───────── -->
+  <section class="ilan">
+    <div class="kap ilan-ic">
+      <div class="sahne-mesaj" aria-hidden="true">
+        <div class="telefon telefon-kucuk">
+          <div class="ekran ekran-mesaj">
+            <div class="m-ust">
+              <img src="/img/hizmet/alsat.webp" alt="">
+              <span><b>Masa lambası</b><small>AgrosAl-Sat · 450 ₺</small></span>
+            </div>
+            <div class="m-akis">
+              <p class="m m-ben">Merhaba, lamba hâlâ satılık mı?</p>
+              <p class="m m-o">Evet, satılık 👍</p>
+              <p class="m m-ben">Akşam bakmaya gelebilir miyim?</p>
+              <p class="m m-o">Tabii, 19:00 uygun 🙂</p>
+              <p class="m m-yaziyor"><i></i><i></i><i></i></p>
+            </div>
+            <div class="m-giris">Mesaj yaz…</div>
+          </div>
+        </div>
+        <div class="etiket-yuzen ey1" style="--r:#0EA5E9">Agrosİş · Garson aranıyor</div>
+        <div class="etiket-yuzen ey2" style="--r:#7C3AED">AgrosEmlak · Kiralık 2+1</div>
+      </div>
+      <div class="ilan-metin">
+        <p class="ust-yazi">İlanlar</p>
+        <h2>İlanını ver,<br><span class="vurgu">mahallende bul.</span></h2>
+        <p>İş, emlak ve ikinci el ilanları mahallende. Beğendiğin ilanın sahibine uygulama içinden mesaj at.</p>
+        <ul class="ilan-liste">
+          <li style="--r:#0EA5E9"><b>Agrosİş</b> İş arayanla çalışan arayan buluşur.</li>
+          <li style="--r:#2563EB"><b>AgrosAl-Sat</b> Elektronikten mobilyaya ikinci el.</li>
+          <li style="--r:#7C3AED"><b>AgrosEmlak</b> Kiralık ve satılık evler.</li>
+        </ul>
       </div>
     </div>
   </section>

@@ -34,7 +34,7 @@ window.addEventListener("scroll", ustGuncelle, { passive: true });
 ustGuncelle();
 
 // Görünür olunca beliren bölümler
-const belirenler = document.querySelectorAll(".bolum-bas, .grup-baslik, .hizmet, .adimlar li, .neden-sol, .neden-liste li, .isletme-kart, .indir-ic");
+const belirenler = document.querySelectorAll(".bolum-bas, .grup-baslik, .hizmet, .adimlar li, .neden-sol, .neden-liste li, .isletme-kart, .indir-ic, .takip-metin, .ilan-metin");
 if ("IntersectionObserver" in window) {
   belirenler.forEach((el) => el.classList.add("belir"));
   const gozcu = new IntersectionObserver((girdiler) => {
@@ -43,4 +43,21 @@ if ("IntersectionObserver" in window) {
     });
   }, { threshold: 0.15 });
   belirenler.forEach((el) => gozcu.observe(el));
+}
+
+// Başlıkta dönen kelime: Yemek mi lazım? → Market mi lazım? …
+const donen = document.querySelector("[data-donen]");
+if (donen && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const kelimeler = donen.dataset.donen.split(",");
+  let sira = 0;
+  setInterval(() => {
+    donen.classList.remove("gir");
+    donen.classList.add("cik");
+    setTimeout(() => {
+      sira = (sira + 1) % kelimeler.length;
+      donen.textContent = kelimeler[sira];
+      donen.classList.remove("cik");
+      donen.classList.add("gir");
+    }, 320);
+  }, 2200);
 }
