@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Agros Kapında — Acıktın mı? Söyle, gelsin.</title>
+  <meta name="description" content="Mahallenin en sevilen restoranları tek uygulamada. Siparişini ver, AgrosJet kuryeleri kapına getirsin.">
+  <meta name="theme-color" content="#FC421A">
+  <link rel="canonical" href="https://agroskapinda.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Agros Kapında">
+  <meta property="og:title" content="Agros Kapında — Acıktın mı? Söyle, gelsin.">
+  <meta property="og:description" content="Mahallenin en sevilen restoranları tek uygulamada.">
+  <meta property="og:url" content="https://agroskapinda.app/">
+  <meta property="og:image" content="https://agroskapinda.app/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="ust" id="ust">
+  <a href="/" class="ust-logo" aria-label="Agros Kapında ana sayfa">
+    <img src="/img/logo-beyaz.png" alt="Agros Kapında" width="120" height="55">
+  </a>
+  <nav class="ust-menu" aria-label="Ana menü">
+    <a href="#nasil">Nasıl çalışır</a>
+    <a href="#restoranlar">Restoranlar için</a>
+    <a href="#indir" class="ust-dugme">Uygulamayı indir</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ───────── GİRİŞ ───────── -->
+  <section class="giris">
+    <div class="giris-metin">
+      <p class="etiket"><span class="nokta"></span> Yemek siparişinin yerlisi</p>
+      <h1 class="giris-baslik">
+        <span class="satir">Acıktın mı?</span>
+        <span class="satir">Söyle, <em>gelsin.</em></span>
+      </h1>
+      <p class="giris-alt">Mahallenin en sevilen restoranları tek uygulamada. Siparişini ver, gerisini kuryelerimize bırak.</p>
+      <div class="magazalar" data-magazalar></div>
+    </div>
+
+    <div class="giris-sahne" aria-hidden="true">
+      <div class="damga-donen">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="cember" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+          <text><textPath href="#cember" textLength="462" lengthAdjust="spacing">SICAK SICAK · KAPINDA · SICAK SICAK · KAPINDA ·</textPath></text>
+        </svg>
+        <span class="damga-ic">★</span>
+      </div>
+
+      <div class="telefon">
+        <div class="telefon-ekran">
+          <div class="uyg-ust">
+            <span class="uyg-adres">Teslimat adresi<b>Ev · Çarşı Mah.</b></span>
+            <span class="uyg-sepet">2</span>
+          </div>
+          <div class="uyg-ara">Restoran ya da yemek ara…</div>
+          <div class="uyg-kategoriler">
+            <span class="aktif">Hepsi</span><span>Döner</span><span>Pide</span><span>Burger</span>
+          </div>
+          <div class="uyg-kart k1">
+            <div class="uyg-gorsel"><span>DÖNER</span></div>
+            <div class="uyg-bilgi"><b>Usta Dönerci</b><small>Döner · 25–35 dk</small></div>
+            <span class="uyg-puan">4,8</span>
+          </div>
+          <div class="uyg-kart k2">
+            <div class="uyg-gorsel"><span>PİDE</span></div>
+            <div class="uyg-bilgi"><b>Taş Fırın Pide</b><small>Pide · 30–40 dk</small></div>
+            <span class="uyg-puan">4,9</span>
+          </div>
+          <div class="uyg-kart k3">
+            <div class="uyg-gorsel"><span>BURGER</span></div>
+            <div class="uyg-bilgi"><b>Köşe Burger</b><small>Burger · 20–30 dk</small></div>
+            <span class="uyg-puan">4,7</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bildirim-balon">
+        <span class="bb-ikon">
+          <svg viewBox="0 0 24 24"><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0m10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0M3 17h2m4 0h6m4 0h1v-4l-3-5h-4v9M3 13h11V6H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span><b>Kuryen yola çıktı</b><small>Birazdan kapındayız</small></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── KAYAN ŞERİT ───────── -->
+  <section class="serit" aria-label="Mutfaklar">
+    <div class="serit-hat">
+      <div class="serit-icerik">
+        <span>Döner</span><i>✺</i><span class="bos">Pide</span><i>✺</i><span>Lahmacun</span><i>✺</i><span class="bos">Burger</span><i>✺</i><span>Çiğ köfte</span><i>✺</i><span class="bos">Pizza</span><i>✺</i><span>Kebap</span><i>✺</i><span class="bos">Tatlı</span><i>✺</i><span>Ev yemeği</span><i>✺</i>
+      </div>
+      <div class="serit-icerik" aria-hidden="true">
+        <span>Döner</span><i>✺</i><span class="bos">Pide</span><i>✺</i><span>Lahmacun</span><i>✺</i><span class="bos">Burger</span><i>✺</i><span>Çiğ köfte</span><i>✺</i><span class="bos">Pizza</span><i>✺</i><span>Kebap</span><i>✺</i><span class="bos">Tatlı</span><i>✺</i><span>Ev yemeği</span><i>✺</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── NASIL ÇALIŞIR ───────── -->
+  <section class="nasil" id="nasil">
+    <div class="nasil-metin">
+      <p class="kucuk-baslik">Nasıl çalışır</p>
+      <h2>Üç dokunuş.<br><em>Bir kapı zili.</em></h2>
+      <p>Uzun menüler, karışık ekranlar yok. Restoranını seç, sepetini doldur, siparişini ver. Gerisini biz hallederiz.</p>
+    </div>
+
+    <div class="fis" role="list" aria-label="Sipariş adımları">
+      <div class="fis-ust">
+        <b>AGROS KAPINDA</b>
+        <span>SİPARİŞ FİŞİ</span>
+        <span class="fis-no">No: 000001 · <time data-bugun></time></span>
+      </div>
+      <div class="fis-cizgi"></div>
+      <div class="fis-satir" role="listitem">
+        <span class="fis-adet">01</span>
+        <div><b>Restoranını seç</b><small>Yakınındaki restoranlar, puanları ve teslim süreleriyle.</small></div>
+        <span class="fis-tik">✓</span>
+      </div>
+      <div class="fis-satir" role="listitem">
+        <span class="fis-adet">02</span>
+        <div><b>Sepetini doldur</b><small>Ürünü seç, notunu ekle, adresini onayla.</small></div>
+        <span class="fis-tik">✓</span>
+      </div>
+      <div class="fis-satir" role="listitem">
+        <span class="fis-adet">03</span>
+        <div><b>Kapıyı aç</b><small>Kuryen siparişini sıcak sıcak teslim etsin.</small></div>
+        <span class="fis-tik">✓</span>
+      </div>
+      <div class="fis-cizgi"></div>
+      <div class="fis-toplam"><span>TOPLAM</span><b>3 ADIM</b></div>
+      <div class="fis-barkod" aria-hidden="true"></div>
+      <p class="fis-not">* Afiyet olsun *</p>
+    </div>
+  </section>
+
+  <!-- ───────── TAKİP ───────── -->
+  <section class="takip">
+    <div class="takip-metin">
+      <p class="kucuk-baslik">Her adımda haberin olsun</p>
+      <h2>Siparişin nerede,<br><em>hep bil.</em></h2>
+      <p>Restoran siparişini onayladığında, kuryen yola çıktığında ve kapına geldiğinde telefonuna anında bildirim gelir.</p>
+    </div>
+    <div class="takip-bildirimler" aria-hidden="true">
+      <div class="tb tb1">
+        <span class="tb-logo"><img src="/img/icon-192.png" alt="" width="36" height="36"></span>
+        <span class="tb-yazi"><b>Siparişin onaylandı</b><small>Restoran hazırlamaya başladı.</small></span>
+        <span class="tb-saat">şimdi</span>
+      </div>
+      <div class="tb tb2">
+        <span class="tb-logo"><img src="/img/icon-192.png" alt="" width="36" height="36"></span>
+        <span class="tb-yazi"><b>Kuryen yola çıktı</b><small>Siparişin sana doğru geliyor.</small></span>
+        <span class="tb-saat">şimdi</span>
+      </div>
+      <div class="tb tb3">
+        <span class="tb-logo"><img src="/img/icon-192.png" alt="" width="36" height="36"></span>
+        <span class="tb-yazi"><b>Kapındayız!</b><small>Afiyet olsun.</small></span>
+        <span class="tb-saat">şimdi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── NEDEN ───────── -->
+  <section class="neden">
+    <h2 class="neden-baslik">Neden <em>Kapında?</em></h2>
+    <ol class="neden-liste">
+      <li>
+        <span class="neden-no">i.</span>
+        <div>
+          <h3>Kendi kurye ağımız</h3>
+          <p>Siparişini AgrosJet'in deneyimli kuryeleri getirir. Yolda kaybolan, sahipsiz paket yok.</p>
+        </div>
+      </li>
+      <li>
+        <span class="neden-no">ii.</span>
+        <div>
+          <h3>Mahallenin ustaları</h3>
+          <p>Yıllardır bildiğin, sevdiğin yerel restoranlar. Tanıdık lezzetler, tanıdık yüzler.</p>
+        </div>
+      </li>
+      <li>
+        <span class="neden-no">iii.</span>
+        <div>
+          <h3>Sade ve hızlı</h3>
+          <p>Gereksiz ekran yok. Uygulamayı aç, birkaç dokunuşta siparişin yolda.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ───────── RESTORANLAR İÇİN ───────── -->
+  <section class="restoran" id="restoranlar">
+    <div class="restoran-metin">
+      <p class="kucuk-baslik">Restoranlar için</p>
+      <h2>Restoranın<br><em>Kapında'da</em><br>olsun.</h2>
+      <p>Yeni müşterilere ulaş, teslimatı kuryelerimize bırak. Siparişlerin tek panelde, kuryen kapında.</p>
+    </div>
+    <div class="basvuru-kart">
+      <div class="damga">ÇOK<br>YAKINDA</div>
+      <p class="basvuru-baslik">Restoran başvurusu</p>
+      <div class="sahte-alan"><span>Restoran adı</span></div>
+      <div class="sahte-alan"><span>Yetkili adı soyadı</span></div>
+      <div class="sahte-alan"><span>Telefon</span></div>
+      <div class="sahte-alan yarim"><span>İl</span></div>
+      <div class="sahte-alan yarim"><span>İlçe</span></div>
+      <button class="sahte-dugme" type="button" disabled>Başvur</button>
+      <p class="basvuru-not">Başvurular çok yakında bu sayfadan alınacak.</p>
+    </div>
+  </section>
+
+  <!-- ───────── İNDİR ───────── -->
+  <section class="indir" id="indir">
+    <h2>Karnın acıkınca<br><em>aklına biz gel.</em></h2>
+    <div class="magazalar ortala" data-magazalar></div>
+  </section>
+
+</main>
+
+<footer class="alt">
+  <img src="/img/logo-beyaz.png" alt="Agros Kapında" width="110" height="51" loading="lazy">
+  <p>Agros Kapında bir <a href="https://agrosjet.net" rel="noopener">AgrosJet</a> hizmetidir.</p>
+  <p class="alt-telif">© <span data-yil>2026</span> Agros Kapında</p>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
