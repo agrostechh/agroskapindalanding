@@ -425,3 +425,18 @@ main { overflow-x: clip; }
 }
 .ipucu a, .yedek-iletisim a { color: var(--turuncu); font-weight: 600; }
 .yedek-iletisim { margin-top: 26px !important; font-size: 15px !important; }
+
+/* Komisyon yok vurgusu (işletmeler) */
+.komisyon {
+  margin-top: 24px; display: flex; align-items: center; gap: 14px; max-width: 30em;
+  background: #fff; color: var(--yazi); border-radius: 18px; padding: 12px 18px 12px 12px;
+  box-shadow: 0 12px 30px rgba(120, 20, 0, .2); position: relative; z-index: 1;
+}
+.komisyon-yuzde {
+  flex: none; width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center;
+  background: var(--turuncu); color: #fff; font-weight: 800; font-size: 20px; letter-spacing: -.02em;
+}
+.komisyon span:last-child { font-size: 15px; line-height: 1.4; color: var(--yazi-soluk); }
+.komisyon b { color: var(--yazi); font-weight: 800; }
+.basvuru-alt { margin-top: 6px; font-size: 14px; color: var(--yazi-soluk); }
+.basvuru-alt b { color: var(--turuncu); font-weight: 800; }
