@@ -373,3 +373,5 @@ main { overflow-x: clip; }
   .sss-cevap { padding: 0 18px 18px; font-size: 15px; }
   .alt-ic img { margin-right: 0; }
 }
+.ipucu a, .yedek-iletisim a { color: var(--turuncu); font-weight: 600; }
+.yedek-iletisim { margin-top: 26px !important; font-size: 15px !important; }
