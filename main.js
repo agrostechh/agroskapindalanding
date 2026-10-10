@@ -61,3 +61,100 @@ if (donen && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     }, 320);
   }, 2200);
 }
+
+// İşletme başvurusu: AgrosJet.net'in başvuru servisine gider (AgrosJet.app "Başvurular"da "Kapında" rozetiyle görünür).
+// Güvenlik sorusu sunucudan gelir, tek kullanımlıktır; her gönderimden sonra yenisi alınır.
+const BASVURU_API = "https://agrosjetcom-backend-production.up.railway.app/api";
+const form = document.getElementById("basvuru");
+if (form) {
+  const mesaj = form.querySelector(".basvuru-mesaj");
+  const soruYeri = form.querySelector("[data-soru]");
+  const dugme = form.querySelector(".basvuru-gonder");
+  let soruKimligi = null;
+
+  const mesajGoster = (metin) => { mesaj.textContent = metin; mesaj.hidden = !metin; };
+
+  const yeniSoru = async () => {
+    soruKimligi = null;
+    soruYeri.textContent = "…";
+    form.captcha_answer.value = "";
+    try {
+      const r = await fetch(`${BASVURU_API}/captcha/generate`);
+      if (!r.ok) throw new Error();
+      const v = await r.json();
+      soruKimligi = v.captcha_id;
+      soruYeri.textContent = v.question;
+    } catch {
+      soruYeri.textContent = "yüklenemedi";
+    }
+  };
+
+  let soruIstendi = false;
+  const soruyuHazirla = () => { if (!soruIstendi) { soruIstendi = true; yeniSoru(); } };
+  // Sunucu uykudaysa ilk soru gecikebilir: form ekrana yaklaşınca iste
+  if ("IntersectionObserver" in window) {
+    const g = new IntersectionObserver((e) => { if (e[0].isIntersecting) { soruyuHazirla(); g.disconnect(); } }, { rootMargin: "600px" });
+    g.observe(form);
+  } else soruyuHazirla();
+  form.addEventListener("focusin", soruyuHazirla);
+
+  form.addEventListener("input", (e) => e.target.classList.remove("hatali"));
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    mesajGoster("");
+    const zorunlu = [...form.querySelectorAll("[required]")];
+    const eksik = zorunlu.filter((el) => (el.type === "checkbox" ? !el.checked : !el.value.trim()));
+    zorunlu.forEach((el) => el.classList.toggle("hatali", eksik.includes(el)));
+    const rakam = form.phone.value.replace(/\D/g, "");
+    if (eksik.length) {
+      mesajGoster(eksik.some((el) => el.type === "checkbox") && eksik.length === 1
+        ? "Devam etmek için onay kutusunu işaretle." : "Lütfen işaretli alanları doldur.");
+      eksik[0].focus();
+      return;
+    }
+    if (rakam.length < 10) {
+      form.phone.classList.add("hatali");
+      mesajGoster("Telefon numarasını kontrol et.");
+      form.phone.focus();
+      return;
+    }
+    if (!soruKimligi) { await yeniSoru(); mesajGoster("Güvenlik sorusu yenilendi, lütfen cevapla."); return; }
+
+    const deger = (ad) => form[ad].value.trim();
+    const veri = {
+      source: "kapinda",
+      restaurant_name: deger("restaurant_name"), business_type: deger("business_type"),
+      contact_name: deger("contact_name"), phone: deger("phone"),
+      province: deger("province"), district: deger("district"), address: deger("address"),
+      note: deger("note") || null,
+      captcha_id: soruKimligi, captcha_answer: parseInt(deger("captcha_answer"), 10),
+      website: form.website.value,
+    };
+
+    dugme.disabled = true;
+    dugme.textContent = "Gönderiliyor…";
+    try {
+      const r = await fetch(`${BASVURU_API}/applications/restaurant`, {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(veri),
+      });
+      if (r.ok) {
+        form.hidden = true;
+        const tamam = document.getElementById("basvuru-tamam");
+        tamam.hidden = false;
+        tamam.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+      const hata = await r.json().catch(() => ({}));
+      if (r.status === 400 || r.status === 429) mesajGoster(typeof hata.detail === "string" ? hata.detail : "Başvuru gönderilemedi.");
+      else mesajGoster("Bilgileri kontrol edip tekrar dene.");
+      if (r.status === 400) form.captcha_answer.classList.add("hatali");
+    } catch {
+      mesajGoster("Bağlantı kurulamadı. Biraz sonra tekrar dene ya da info@agrostech.net adresine yaz.");
+    } finally {
+      dugme.disabled = false;
+      dugme.textContent = "Başvuruyu gönder";
+    }
+    yeniSoru(); // soru tek kullanımlık: hatalı denemeden sonra yenisi
+  });
+}

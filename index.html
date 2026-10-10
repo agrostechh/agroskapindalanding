@@ -275,14 +275,45 @@
         <p class="ust-yazi acik">İşletmeler için</p>
         <h2>İşletmeni Agros Kapında'ya taşı.</h2>
         <p>Restoran, market, manav, kuruyemişçi ya da çiçekçi… Yeni müşterilere ulaş, teslimatı kuryelerimize bırak.</p>
-        <div class="yakinda-satir">
-          <span class="yakinda-rozet">Çok yakında</span>
-          <span>İşletme başvuruları çok yakında bu sayfadan alınacak.</span>
-        </div>
+        <ul class="isletme-turleri" aria-label="İşletme türleri">
+          <li>Restoran</li><li>Market</li><li>Manav</li><li>Kuruyemişçi</li><li>Çiçekçi</li><li>Kafe</li><li>Pastane</li><li>Şarküteri</li>
+        </ul>
+        <ol class="basvuru-adim">
+          <li><b>1</b> Formu doldur</li>
+          <li><b>2</b> Ekibimiz seni arasın</li>
+          <li><b>3</b> Menünü yükle, satışa başla</li>
+        </ol>
       </div>
-      <ul class="isletme-turleri" aria-label="İşletme türleri">
-        <li>Restoran</li><li>Market</li><li>Manav</li><li>Kuruyemişçi</li><li>Çiçekçi</li><li>Kafe</li><li>Pastane</li><li>Şarküteri</li>
-      </ul>
+
+      <form class="basvuru" id="basvuru" novalidate>
+        <h3>Başvuru formu</h3>
+        <div class="alanlar">
+          <label class="genis">İşletme adı<input name="restaurant_name" required maxlength="120" autocomplete="organization"></label>
+          <label>İşletme türü
+            <select name="business_type" required>
+              <option value="">Seç</option>
+              <option>Restoran</option><option>Kafe</option><option>Pastane</option><option>Market</option>
+              <option>Manav</option><option>Kuruyemiş</option><option>Çiçekçi</option><option>Şarküteri</option><option>Diğer</option>
+            </select>
+          </label>
+          <label>Telefon<input name="phone" type="tel" required maxlength="20" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xxxx"></label>
+          <label class="genis">Yetkili adı soyadı<input name="contact_name" required maxlength="120" autocomplete="name"></label>
+          <label>İl<input name="province" required maxlength="60" autocomplete="address-level1"></label>
+          <label>İlçe<input name="district" required maxlength="60" autocomplete="address-level2"></label>
+          <label class="genis">Adres<input name="address" required maxlength="500" autocomplete="street-address"></label>
+          <label class="genis"><span>Not <small>(isteğe bağlı)</small></span><textarea name="note" rows="2" maxlength="1000" placeholder="Ör. aranmak için uygun saat"></textarea></label>
+          <label class="genis guvenlik"><span>Güvenlik sorusu: <b data-soru>…</b></span><input name="captcha_answer" required inputmode="numeric" maxlength="3" autocomplete="off"></label>
+          <label class="tuzak" aria-hidden="true">Web sitesi<input name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <label class="onay"><input type="checkbox" name="onay" required> <span>Başvurumla ilgili benimle iletişime geçilmesini kabul ediyorum. <a href="https://agrosjet.app/m/privacy" target="_blank" rel="noopener">Gizlilik politikası</a></span></label>
+        <p class="basvuru-mesaj" role="alert" hidden></p>
+        <button type="submit" class="basvuru-gonder">Başvuruyu gönder</button>
+      </form>
+      <div class="basvuru-tamam" id="basvuru-tamam" hidden>
+        <span class="tamam-ikon" aria-hidden="true">✓</span>
+        <h3>Başvurun alındı!</h3>
+        <p>Ekibimiz en kısa sürede seni arayacak.</p>
+      </div>
     </div>
   </section>
 

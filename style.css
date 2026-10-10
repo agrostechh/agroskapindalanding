@@ -258,9 +258,47 @@ main { overflow-x: clip; }
 }
 .isletme-kart::after { content: ""; position: absolute; right: -120px; bottom: -160px; width: 420px; height: 420px; border-radius: 50%; background: rgba(255,255,255,.08); }
 .isletme-metin p:not(.ust-yazi) { margin-top: 16px; font-size: 18px; color: rgba(255,255,255,.9); max-width: 30em; }
-.yakinda-satir { margin-top: 28px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 15px; font-weight: 500; }
-.yakinda-rozet { background: #fff; color: var(--turuncu); font-weight: 800; font-size: 13px; border-radius: 999px; padding: 6px 12px; }
-.isletme-turleri { display: flex; flex-wrap: wrap; gap: 10px; position: relative; z-index: 1; }
+.isletme-kart { grid-template-columns: 1fr 1.15fr; align-items: start; }
+.isletme-turleri { display: flex; flex-wrap: wrap; gap: 10px; position: relative; z-index: 1; margin-top: 28px; }
+.basvuru-adim { margin-top: 32px; display: grid; gap: 12px; font-weight: 600; font-size: 16px; }
+.basvuru-adim li { display: flex; align-items: center; gap: 12px; }
+.basvuru-adim b { width: 30px; height: 30px; border-radius: 50%; background: #fff; color: var(--turuncu); display: grid; place-items: center; font-size: 14px; font-weight: 800; flex: none; }
+
+.basvuru, .basvuru-tamam {
+  position: relative; z-index: 1; background: #fff; color: var(--yazi); border-radius: 22px;
+  padding: 28px; box-shadow: 0 24px 60px rgba(120, 20, 0, .25);
+}
+.basvuru h3, .basvuru-tamam h3 { font-size: 22px; font-weight: 800; }
+.basvuru .alanlar { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.basvuru label { display: grid; gap: 6px; font-size: 13px; font-weight: 700; color: #333; min-width: 0; }
+.basvuru label small { font-weight: 500; color: var(--yazi-soluk); }
+.basvuru .genis { grid-column: 1 / -1; }
+.basvuru input, .basvuru select, .basvuru textarea {
+  font: inherit; font-size: 16px; font-weight: 500; color: var(--yazi); width: 100%;
+  background: var(--zemin-gri); border: 1.5px solid transparent; border-radius: 12px; padding: 11px 13px;
+  transition: border-color .15s, background .15s;
+}
+.basvuru textarea { resize: vertical; min-height: 64px; }
+.basvuru input:focus, .basvuru select:focus, .basvuru textarea:focus { outline: none; border-color: var(--turuncu); background: #fff; }
+.basvuru .hatali { border-color: #D92D20; background: #FFF5F4; }
+.basvuru .guvenlik { grid-template-columns: 1fr 96px; align-items: center; }
+.basvuru .guvenlik b { color: var(--turuncu); font-weight: 800; font-size: 15px; white-space: nowrap; }
+.basvuru .tuzak { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.basvuru .onay { margin-top: 16px; display: flex; gap: 10px; align-items: flex-start; font-weight: 500; font-size: 13px; color: var(--yazi-soluk); }
+.basvuru .onay input { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--turuncu); flex: none; padding: 0; }
+.basvuru .onay a { color: var(--yazi); text-decoration: underline; }
+.basvuru-mesaj { margin-top: 14px; font-size: 14px; font-weight: 600; color: #B42318; background: #FEF3F2; border-radius: 10px; padding: 10px 12px; }
+.basvuru-gonder {
+  margin-top: 18px; width: 100%; border: 0; cursor: pointer; font: inherit; font-weight: 800; font-size: 16px;
+  background: var(--koyu); color: #fff; border-radius: 14px; padding: 15px; transition: transform .15s, background .15s;
+}
+.basvuru-gonder:hover { background: var(--turuncu-koyu); }
+.basvuru-gonder:active { transform: scale(.98); }
+.basvuru-gonder:disabled { opacity: .6; cursor: wait; }
+.basvuru-tamam { text-align: center; padding: 56px 28px; align-self: center; }
+.basvuru-tamam p { margin-top: 8px; color: var(--yazi-soluk); }
+.tamam-ikon { width: 64px; height: 64px; border-radius: 50%; background: var(--turuncu); color: #fff; display: inline-grid; place-items: center; font-size: 32px; font-weight: 800; margin-bottom: 16px; animation: tamam .5s cubic-bezier(.3,1.6,.5,1); }
+@keyframes tamam { from { transform: scale(0); } }
 .isletme-turleri li { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: 9px 16px; font-weight: 600; font-size: 15px; }
 
 /* ───────── İndir ───────── */
@@ -295,6 +333,7 @@ main { overflow-x: clip; }
   .giris-ic { grid-template-columns: 1fr; gap: 48px; }
   .adimlar { grid-template-columns: 1fr; }
   .isletme-kart { grid-template-columns: 1fr; padding: 44px 26px; gap: 30px; border-radius: 24px; }
+  .basvuru { padding: 22px 18px; }
   .hizmetler, .neden { padding: 80px 0; }
   .nasil, .indir { padding: 80px 0; }
   .isletmeler { padding-bottom: 80px; }
